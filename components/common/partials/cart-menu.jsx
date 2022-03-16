@@ -49,7 +49,8 @@ function CartMenu ( props ) {
     return (
         <div className="dropdown cart-dropdown">
             <a href="#" title="Cart" className="dropdown-toggle dropdown-arrow cart-toggle" onClick={ toggleCart }>
-                <i className="minicart-icon"></i>
+                <i className="icon-cart"></i>
+                
                 <span className="cart-count badge-circle">{ getQtyTotal( cartItems ) }</span>
             </a>
 

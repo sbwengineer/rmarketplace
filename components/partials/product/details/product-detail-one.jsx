@@ -390,7 +390,7 @@ function ProductDetailOne ( props ) {
 
                     <hr className="divider mb-0 mt-0" />
 
-                    <div className="product-single-share mb-3">
+                    {/* <div className="product-single-share mb-3">
                         <label className="sr-only">Share:</label>
 
                         <div className="social-icons mr-2">
@@ -406,7 +406,7 @@ function ProductDetailOne ( props ) {
 
                         <a href="#" className={ `btn-icon-wish add-wishlist ${ isInWishlist() ? 'added-wishlist' : '' }` } onClick={ onWishlistClick } title={ `${ isInWishlist() ? 'Go to Wishlist' : 'Add to Wishlist' }` }><i
                             className="icon-wishlist-2"></i><span>{ isInWishlist() ? 'Go to Wishlist' : 'Add to Wishlist' }</span></a>
-                    </div>
+                    </div> */}
                 </div>
             }
         </>

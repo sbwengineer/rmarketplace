@@ -4,6 +4,7 @@ import { useRouter } from 'next/router';
 import { useLazyQuery } from '@apollo/client';
 
 import ALink from '../../components/common/ALink';
+import SearchForm from "../../components/common/partials/search-form";
 import Pagination from '../../components/features/pagination';
 import ProductsGrid from '../../components/partials/products-collection/product-grid';
 
@@ -114,20 +115,15 @@ function Shop () {
             <div className="container">
                 <div className="row">
                     <div className="col-lg-12 main-content">
-                        <nav className="toolbox sticky-header mobile-sticky">
-                            <div className="toolbox-left">
-                                <div className="toolbox-item">
-                                    <div className="select-custom">
-                                        <select name="orderby" className="form-control" value={ sortBy } onChange={ e => onSortByChange( e ) }>
-                                            <option value="default">Default sorting</option>
-                                            <option value="popularity">Sort by popularity</option>
-                                            <option value="rating">Sort by average rating</option>
-                                            <option value="price">Sort by price: low to high</option>
-                                            <option value="price-desc">Sort by price: high to low</option>
-                                        </select>
-                                    </div>
-                                </div>
+                        <nav className="toolbox sticky-header mobile-sticky" >
 
+                            <div className="toolbox-right">
+                                <div className="toolbox-item toolbox-show">
+                                    <SearchForm />
+                                </div>
+                            </div>
+
+                            <div className="toolbox-left">
                                 <div className="toolbox-item">
                                     <div className="select-custom">
                                         <select name="category" className="form-control" value={ sortBy } onChange={ e => onSortByChange( e ) }>
@@ -151,9 +147,28 @@ function Shop () {
                                         </select>
                                     </div>
                                 </div>
-                            </div>
 
-                            <div className="toolbox-right">
+                                <div className="toolbox-item">
+                                    <div className="select-custom">
+                                        <select name="collections" className="form-control">
+                                            <option value="default">All</option>
+                                            <option value="possible">possible</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div className="toolbox-item">
+                                    <div className="select-custom">
+                                        <select name="orderby" className="form-control" value={ sortBy } onChange={ e => onSortByChange( e ) }>
+                                            <option value="default">Default sorting</option>
+                                            <option value="popularity">Sort by popularity</option>
+                                            <option value="rating">Sort by average rating</option>
+                                            <option value="price">Sort by price: low to high</option>
+                                            <option value="price-desc">Sort by price: high to low</option>
+                                        </select>
+                                    </div>
+                                </div>
+
                                 <div className="toolbox-item toolbox-show">
                                     <label>Show:</label>
 
@@ -166,15 +181,8 @@ function Shop () {
                                     </div>
                                 </div>
 
-                                <div className="toolbox-item layout-modes">
-                                    <ALink href={ { pathname: router.pathname, query: query } } className="layout-btn btn-grid active" title="Grid">
-                                        <i className="icon-mode-grid"></i>
-                                    </ALink>
-                                    <ALink href={ { pathname: '/shop/list', query: query } } className="layout-btn btn-list" title="List">
-                                        <i className="icon-mode-list"></i>
-                                    </ALink>
-                                </div>
                             </div>
+
                         </nav>
 
                         <ProductsGrid products={ products } loading={ loading } perPage={ perPage } />
@@ -182,7 +190,7 @@ function Shop () {
                         { loading || ( products && products.length ) ?
                             <nav className="toolbox toolbox-pagination">
                                 <div className="toolbox-item toolbox-show">
-                                    <label>Show:</label>
+                                    {/* <label>Show:</label>
 
                                     <div className="select-custom">
                                         <select name="count" className="form-control" value={ perPage } onChange={ e => onPerPageChange( e ) }>
@@ -190,8 +198,75 @@ function Shop () {
                                             <option value="24">24</option>
                                             <option value="36">36</option>
                                         </select>
+                                    </div> */}
+                                    <div className="toolbox-right">
+                                        <div className="toolbox-item toolbox-show">
+                                            <SearchForm />
+                                        </div>
                                     </div>
+
+                                    <div className="toolbox-left">
+                                        <div className="toolbox-item">
+                                            <div className="select-custom">
+                                                <select name="category" className="form-control" value={ sortBy } onChange={ e => onSortByChange( e ) }>
+                                                    <option value="default">Category</option>
+                                                    <option value="popularity">Art</option>
+                                                    <option value="rating">Photography</option>
+                                                    <option value="date">Games</option>
+                                                    <option value="price">Animation</option>
+                                                </select>
+                                            </div>
+                                        </div>
+
+                                        <div className="toolbox-item">
+                                            <div className="select-custom">
+                                                <select name="collections" className="form-control" value={ sortBy } onChange={ e => onSortByChange( e ) }>
+                                                    <option value="default">Collections</option>
+                                                    <option value="popularity">NFSH2Artboard</option>
+                                                    <option value="rating">NFSH2Artboard</option>
+                                                    <option value="date">NFSH2Artboard</option>
+                                                    <option value="price">NFSH2Artboard</option>
+                                                </select>
+                                            </div>
+                                        </div>
+
+                                        <div className="toolbox-item">
+                                            <div className="select-custom">
+                                                <select name="collections" className="form-control">
+                                                    <option value="default">All</option>
+                                                    <option value="possible">possible</option>
+                                                </select>
+                                            </div>
+                                        </div>
+
+                                        <div className="toolbox-item">
+                                            <div className="select-custom">
+                                                <select name="orderby" className="form-control" value={ sortBy } onChange={ e => onSortByChange( e ) }>
+                                                    <option value="default">Default sorting</option>
+                                                    <option value="popularity">Sort by popularity</option>
+                                                    <option value="rating">Sort by average rating</option>
+                                                    <option value="price">Sort by price: low to high</option>
+                                                    <option value="price-desc">Sort by price: high to low</option>
+                                                </select>
+                                            </div>
+                                        </div>
+
+                                        <div className="toolbox-item toolbox-show">
+                                            <label>Show:</label>
+
+                                            <div className="select-custom">
+                                                <select name="count" className="form-control" value={ perPage } onChange={ ( e ) => onPerPageChange( e ) }>
+                                                    <option value="12">12</option>
+                                                    <option value="24">24</option>
+                                                    <option value="36">36</option>
+                                                </select>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
                                 </div>
+                                
                                 <Pagination totalPage={ totalPage } />
                             </nav>
                             : ''

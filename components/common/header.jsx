@@ -3,6 +3,7 @@ import ALink from "./ALink";
 import CartMenu from "./partials/cart-menu";
 import MainMenu from "./partials/main-menu";
 import SearchForm from "./partials/search-form";
+import mainMenu from "./partials/main-menu";
 
 export default function Header ( { adClass = '' } ) {
     function openMobileMenu ( e ) {
@@ -25,16 +26,20 @@ export default function Header ( { adClass = '' } ) {
                         </ALink>
                     </div>
 
-                    <div className="header-center">
+                    {/* <div className="header-center">
                         <MainMenu />
-                    </div>
+                    </div> */}
 
                     <div className="header-right">
-                        <ALink href="/pages/login" className="header-icon header-icon-user mb-0" title="Login"><i className="icon-user-2"></i></ALink>
+                        {/* <ALink href="/pages/login" className="header-icon header-icon-user mb-0" title="Login"><i className="icon-user-2"></i></ALink> */}
 
-                        <SearchForm />
+                        <MainMenu />
 
-                        <ALink href="/pages/wishlist" className="header-icon" title="wishlist"><i className="icon-wishlist-2"></i></ALink>
+                        <ALink href="#" className="header-icon header-icon-user mb-0" title="Connect"><i className="icon-rocket"></i></ALink>
+
+                        {/* <SearchForm /> */}
+
+                        {/* <ALink href="/pages/wishlist" className="header-icon" title="wishlist"><i className="icon-wishlist-2"></i></ALink> */}
 
                         <CartMenu />
                     </div>

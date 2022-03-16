@@ -71,11 +71,11 @@ function SearchForm ( props ) {
         );
     }
 
-    function onSearchClick ( e ) {
-        e.preventDefault();
-        e.stopPropagation();
-        e.currentTarget.parentNode.classList.toggle( 'show' );
-    }
+    // function onSearchClick ( e ) {
+    //     e.preventDefault();
+    //     e.stopPropagation();
+    //     e.currentTarget.parentNode.classList.toggle( 'show' );
+    // }
 
     function onBodyClick ( e ) {
         if ( e.target.closest( '.header-search' ) ) return e.target.closest( '.header-search' ).classList.contains( 'show-results' ) || e.target.closest( '.header-search' ).classList.add( 'show-results' );
@@ -105,8 +105,7 @@ function SearchForm ( props ) {
 
     return (
         <div className={ `header-icon header-search header-search-popup header-search-category d-none d-sm-block mb-0 ${props.adClass}` }>
-            <a href="#" className="search-toggle" role="button" onClick={ onSearchClick }><i className="icon-magnifier"></i></a>
-
+            {/* <a href="#" className="search-toggle" role="button" onClick={ onSearchClick }><i className="icon-magnifier"></i></a> */}
             <form action="#" method="get" onSubmit={ ( e ) => onSubmitSearchForm( e ) }>
                 <div className="header-search-wrapper">
                     <input type="search" className="form-control" name="q" id={ `${props.type === 1 ? 'q' : 'qqq'}` } placeholder="I'm searching for..." value={ search }

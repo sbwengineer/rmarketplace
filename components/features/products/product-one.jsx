@@ -58,8 +58,8 @@ function ProductOne ( props ) {
     return (
         <div className={ `product-default media-with-lazy ${adClass}` }>
             <figure>
-                <ALink href={ `/product/${link}/${product.slug}` }>
-                    <div className="lazy-overlay"></div>
+                {/* <ALink href={ `/product/${link}/${product.slug}` }>
+                    <div className="lazy-overlay"></div> */}
 
                     <LazyLoadImage
                         alt="product"
@@ -69,7 +69,7 @@ function ProductOne ( props ) {
                         width="100%"
                         height="auto"
                     />
-                </ALink>
+                {/* // </ALink> */}
 
                 {/* <div className="label-group">
                     { product.is_hot ? <div className="product-label label-hot">HOT</div> : '' }
@@ -77,7 +77,7 @@ function ProductOne ( props ) {
                     { isSale() ? <div className="product-label label-sale">{ isSale() }</div> : '' }
                 </div> */}
 
-                <div className="btn-icon-group">
+                {/* <div className="btn-icon-group">
                     {
                         product.variants.length > 0 ?
                             <ALink href={ `/product/default/${product.slug}` } className="btn-icon btn-add-cart"><i
@@ -85,9 +85,11 @@ function ProductOne ( props ) {
                             : <a href="#" className="btn-icon btn-add-cart product-type-simple" title="Add To Cart" onClick={ onAddCartClick }><i
                                 className="icon-shopping-cart"></i></a>
                     }
-                </div>
-
-                <a href="#" className="btn-quickview" title="Quick View" onClick={ onQuickViewClick }>Quick View</a>
+                </div> */}
+                <ALink href={ `/product/${link}/${product.slug}` }>
+                    <div className="btn-quickview" title="Quick View">Details</div>
+                </ALink>
+                {/* <a href="#" className="btn-quickview" title="Quick View" onClick={ onQuickViewClick }>Quick View</a> */}
             </figure>
 
             <div className="product-details">

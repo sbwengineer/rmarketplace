@@ -18,6 +18,19 @@ function MainMenu ( { router } ) {
             <nav className="main-nav">
                 <ul className="menu sf-js-enabled sf-arrows">
                     <li className={ pathname.startsWith( '/shop' ) ? 'active' : '' }>
+                        <ALink href="/shop" className="sf-with-ul"><i className="icon-user mr-3"></i>User Info</ALink>
+                        <div className="megamenu megamenu-fixed-width megamenu-1col">
+                            <div className="row">
+                                <div className="col-lg-12">
+                                    <ul className="submenu">
+                                        <li>Username</li>
+                                        <li>Address:</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    {/* <li className={ pathname.startsWith( '/shop' ) ? 'active' : '' }>
                         <ALink href="/shop" className="sf-with-ul"><i className="icon-mode-grid mr-3"></i>Category</ALink>
                         <div className="megamenu megamenu-fixed-width megamenu-1col">
                             <div className="row">
@@ -52,7 +65,7 @@ function MainMenu ( { router } ) {
                                 </div>
                             </div>
                         </div>
-                    </li>
+                    </li> */}
 
                     {/* <li><a href="https://1.envato.market/DdLk5" target="_blank"><i
                         className="icon-star-empty mr-3"></i>Buy Porto</a></li>

@@ -69,13 +69,13 @@ function ProductDefault () {
                     </div>
                 </div>
 
-                <SingleTabOne product={ product } />
+                {/* <SingleTabOne product={ product } /> */}
 
-                <RelatedProducts products={ related } loading={ loading } />
-                <hr className="mt-0 m-b-5" />
+                {/* <RelatedProducts products={ related } loading={ loading } />
+                <hr className="mt-0 m-b-5" /> */}
             </div>
 
-            <ProductWidgetContainer />
+            {/* <ProductWidgetContainer /> */}
         </main >
     )
 }
